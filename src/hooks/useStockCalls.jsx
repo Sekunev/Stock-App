@@ -93,6 +93,7 @@ const useStockCalls = () => {
   const postFirm = (info) => postStockData(info, "firms");
   const postProduct = (info) => postStockData(info, "products");
   const postSale = (info) => postStockData(info, "sales");
+  const postPurchase = (info) => postStockData(info, "purchases");
 
   //!------------- PUT CALLS ----------------
 
@@ -111,6 +112,7 @@ const useStockCalls = () => {
   const putFirm = (info) => putStockData(info, "firms");
   const putProduct = (info) => putStockData(info, "product");
   const putSale = (info) => putStockData(info, "sales");
+  const putPurchase = (info) => putStockData(info, "purchases");
 
   //!------------- DELETE CALLS ----------------
 
@@ -129,6 +131,7 @@ const useStockCalls = () => {
   const deleteFirm = (id) => deleteStockData("firms", id);
   const deleteProduct = (id) => deleteStockData("products", id);
   const deleteSale = (id) => deleteStockData("sales", id);
+  const deletePurchase = (id) => deleteStockData("purchases", id);
 
   return {
     getBrands,
@@ -140,14 +143,17 @@ const useStockCalls = () => {
     postFirm,
     postProduct,
     postSale,
+    postPurchase,
     putBrand,
     putFirm,
     putProduct,
     putSale,
+    putPurchase,
     deleteBrand,
     deleteFirm,
     deleteProduct,
     deleteSale,
+    deletePurchase,
   };
 };
 

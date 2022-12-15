@@ -13,10 +13,11 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { logoutSuccess } from "../features/authSlice";
 import { useSelector } from "react-redux";
-import { Button, Container } from "@mui/material";
+import { Avatar, Button, Container } from "@mui/material";
 import MenuListItems from "../components/MenuListItems";
 import { amber } from "@mui/material/colors";
 import { Outlet } from "react-router-dom";
+import useAuthCalls from "../hooks/useAuthCalls";
 
 const drawerWidth = 200;
 
@@ -87,6 +88,7 @@ const Drawer = styled(MuiDrawer, {
 
 export default function Dashboard() {
   const { currentUser } = useSelector((state) => state.auth);
+  const { logout } = useAuthCalls();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -119,9 +121,16 @@ export default function Dashboard() {
             Stock App
           </Typography>
           {currentUser && (
-            <Button color="inherit" onClick={() => logoutSuccess()}>
-              Logout
-            </Button>
+            <>
+              <Button color="inherit" onClick={() => logout()()}>
+                Logout
+              </Button>
+              <Avatar
+                alt={currentUser.toUpperCase()}
+                src="/static/images/avatar/1.jpg"
+                sx={{ bgcolor: "black", ml: 2, width: 46, height: 46 }}
+              />
+            </>
           )}
         </Toolbar>
       </AppBar>

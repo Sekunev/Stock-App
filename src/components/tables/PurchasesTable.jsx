@@ -17,14 +17,14 @@ import { arrowStyle, btnHoverStyle, flex } from "../../styles/globalStyle";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 
-export default function SalesTable({
+export default function PurchasesTable({
   setOpen,
   setInfo,
   selectedProducts,
   selectedBrands,
 }) {
-  const { deleteSale } = useStockCalls();
-  const { sales } = useSelector((state) => state.stock);
+  const { deletePurchase } = useStockCalls();
+  const { purchases } = useSelector((state) => state.stock);
 
   const columnObj = {
     created: 1,
@@ -33,10 +33,14 @@ export default function SalesTable({
     price: 1,
     product: 1,
     brand: 1,
+    firm: 1,
   };
 
   // useSortColumn hook'una bakıldığında 2 parametre aldığı görülecektir.
-  const { sortedData, handleSort, columns } = useSortColumn(sales, columnObj);
+  const { sortedData, handleSort, columns } = useSortColumn(
+    purchases,
+    columnObj
+  );
   //? Verilen item secilen brand'larin icerisinde varsa true dondurur
   //? VEYA hic brand secilmemisse true dondurur.aksinde false dondurur.
   //? bu fonksiyon filter() icerisinde yazilacagi icin false dondurmesi
@@ -61,6 +65,15 @@ export default function SalesTable({
               </Box>
             </TableCell>
             <TableCell align="center">Category</TableCell>
+            <TableCell align="center">
+              <Box sx={arrowStyle} onClick={() => handleSort("firm")}>
+                <Typography variant="body" noWrap>
+                  Firm Name
+                </Typography>
+                {columns.brand === 1 && <UpgradeIcon />}
+                {columns.brand !== 1 && <VerticalAlignBottomIcon />}
+              </Box>
+            </TableCell>
             <TableCell align="center">
               <Box sx={arrowStyle} onClick={() => handleSort("brand")}>
                 <Typography variant="body" noWrap>
@@ -120,6 +133,7 @@ export default function SalesTable({
               >
                 <TableCell align="center">{item.createds}</TableCell>
                 <TableCell align="center">{item.category[0].name}</TableCell>
+                <TableCell align="center">{item.firm}</TableCell>
                 <TableCell align="center">{item.brand}</TableCell>
                 <TableCell align="center">{item.product}</TableCell>
                 <TableCell align="center">{item.quantity}</TableCell>
@@ -135,7 +149,7 @@ export default function SalesTable({
                       }}
                     />
                     <DeleteForeverIcon
-                      onClick={() => deleteSale(item.id)}
+                      onClick={() => deletePurchase(item.id)}
                       sx={btnHoverStyle}
                     />
                   </Box>
