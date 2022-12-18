@@ -11,7 +11,7 @@ const KpiCards = () => {
 
   const total = (data) =>
     data
-      ?.map((items) => Number(items.price_total))
+      ?.map((sale) => Number(sale.price_total))
       .reduce((acc, val) => acc + val, 0);
 
   const totalProfit = total(sales) - total(purchases);
@@ -41,7 +41,7 @@ const KpiCards = () => {
   ];
   return (
     <Grid container justifyContent="center" alignItems="center" spacing={1}>
-      {data.map((item) => (
+      {data?.map((item) => (
         <Grid
           item
           key={item.title}

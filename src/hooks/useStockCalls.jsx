@@ -29,6 +29,8 @@ const useStockCalls = () => {
   const getBrands = () => getStockData("brands");
   const getFirms = () => getStockData("firms");
   const getProducts = () => getStockData("products");
+  const getSales = () => getStockData("sales");
+  const getPurchases = () => getStockData("purchases");
 
   //!------------- GET CALLS (Promise.all -->
   // Aşağıdaki gibi Apiden aynı anda veri çekme işleminin süresi veri çeken fonksiyonun async yapıda olması nedeniyle 3 isteğin ayrı ayrı çekme işleminin toplamı kadardır.
@@ -137,6 +139,8 @@ const useStockCalls = () => {
     getBrands,
     getFirms,
     getProducts,
+    getSales,
+    getPurchases,
     getProCatBrands,
     getAllStockData,
     postBrand,

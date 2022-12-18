@@ -1,6 +1,6 @@
-# FireBlog App
+# Stock App
 
-### Check The Live Website ➡️ [Live Website](https://sekunev-stock-app.netlify.app//)
+### Check The Live Website ➡️ [Live Website](https://sekunev-stock-app.netlify.app/)
 
 ## Description
 
