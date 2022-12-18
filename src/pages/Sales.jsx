@@ -23,11 +23,12 @@ const Sales = () => {
 
   return (
     <Box>
-      <Typography variant="h3" color="secondary.contrastText" gutterBottom>
+      <Typography variant="h3" color="primary" gutterBottom>
         Sales
       </Typography>
 
       <Button
+        variant="contained"
         onClick={() => {
           setInfo({});
           setOpen(true);

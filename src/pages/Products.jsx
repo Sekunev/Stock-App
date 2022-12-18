@@ -1,13 +1,9 @@
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-// import FirmCard from "../components/cards/FirmCard";
-import FirmModal from "../components/modals/FirmModal";
 import { useSelector } from "react-redux";
 import useStockCalls from "../hooks/useStockCalls";
 import { useEffect } from "react";
-import { flexCenter } from "../styles/globalStyle";
-import FirmCard from "../components/cards/FirmCard.jsx";
 import ProductModal from "../components/modals/ProductModal";
 import ProductsTable from "../components/tables/ProductsTable";
 import MultiSelect from "../components/MultiSelect";
@@ -27,11 +23,13 @@ const Products = () => {
 
   return (
     <Box>
-      <Typography variant="h3" color="secondary.contrastText" gutterBottom>
+      <Typography variant="h3" color="primary" gutterBottom>
         Product
       </Typography>
 
-      <Button onClick={() => setOpen(true)}>New Product</Button>
+      <Button variant="contained" onClick={() => setOpen(true)}>
+        New Product
+      </Button>
 
       <MultiSelect
         data1={brands}

@@ -12,7 +12,7 @@ import StoreIcon from "@mui/icons-material/Store";
 import StarsIcon from "@mui/icons-material/Stars";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
-import { iconStyle } from "../styles/globalStyle";
+// import { iconStyle } from "../styles/globalStyle";
 import { useNavigate } from "react-router-dom";
 
 const icons = [
@@ -63,14 +63,17 @@ const MenuListItems = ({ open }) => {
             {item.url.includes("http") && (
               <ListItemButton
                 to={item.url}
-                sx={
-                  (iconStyle,
-                  {
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  })
-                }
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: "#010221",
+                  "& .MuiSvgIcon-root": { color: "#010221" },
+                  //MuiSvgIcon-root class'ına tarayıcının incele bölümüne bakarak ulaştık.
+                  "&:hover": { color: "#F4E2DE" },
+                  "&:hover .MuiSvgIcon-root": { color: "#F4E2DE" },
+                  // "&:hover .MuiListItemText-root": { color: "red" },
+                }}
               >
                 <ListItemIcon
                   sx={{
@@ -90,14 +93,17 @@ const MenuListItems = ({ open }) => {
             {!item.url.includes("http") && (
               <ListItemButton
                 onClick={() => navigate(item.url)}
-                sx={
-                  (iconStyle,
-                  {
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  })
-                }
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: "#010221",
+                  "& .MuiSvgIcon-root": { color: "#010221" },
+                  //MuiSvgIcon-root class'ına tarayıcının incele bölümüne bakarak ulaştık.
+                  "&:hover": { color: "#F4E2DE" },
+                  "&:hover .MuiSvgIcon-root": { color: "#F4E2DE" },
+                  // "&:hover .MuiListItemText-root": { color: "red" },
+                }}
               >
                 <ListItemIcon
                   sx={{

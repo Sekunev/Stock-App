@@ -20,10 +20,12 @@ const Brands = () => {
   console.log(brands);
   return (
     <Box>
-      <Typography variant="h3" color="secondary.contrastText" gutterBottom>
+      <Typography variant="h3" color="primary" gutterBottom>
         Brands
       </Typography>
-      <Button onClick={() => setOpen(true)}>New Brand</Button>
+      <Button variant="contained" onClick={() => setOpen(true)}>
+        New Brand
+      </Button>
       <BrandModal open={open} setOpen={setOpen} info={info} setInfo={setInfo} />
       {brands?.length > 0 && (
         <Grid container sx={flexCenter} mt={4}>

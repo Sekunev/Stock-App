@@ -1,8 +1,10 @@
 export const iconStyle = {
-  color: "#eee",
-  "& .MuiSvgIcon-root": { color: "#eee" },
-  "&:hover": { color: "red" },
-  "&:hover .MuiSvgIcon-root": { color: "red" },
+  color: "#010221",
+  "& .MuiSvgIcon-root": { color: "#010221" },
+  //MuiSvgIcon-root class'ına tarayıcının incele bölümüne bakarak ulaştık.
+  "&:hover": { color: "#F4E2DE" },
+  "&:hover .MuiSvgIcon-root": { color: "#F4E2DE" },
+  // "&:hover .MuiListItemText-root": { color: "red" },
 };
 export const modalstyle = {
   position: "absolute",

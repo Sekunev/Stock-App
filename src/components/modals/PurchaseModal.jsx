@@ -22,7 +22,8 @@ const PurchaseModal = ({ open, setOpen, info, setInfo }) => {
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    setInfo({ ...info, [name]: value });
+    // SELECT VALUE'LERİ İD (NUMBER) OLDUĞU İÇİN NUMBER
+    setInfo({ ...info, [name]: Number(value) });
   };
   console.log(info);
 

@@ -21,10 +21,12 @@ const Firms = () => {
   console.log(firms);
   return (
     <Box>
-      <Typography variant="h3" color="secondary.contrastText" gutterBottom>
+      <Typography variant="h3" color="primary" gutterBottom>
         Firms
       </Typography>
-      <Button onClick={() => setOpen(true)}>New Firm</Button>
+      <Button variant="contained" onClick={() => setOpen(true)}>
+        New Firm
+      </Button>
       <FirmModal open={open} setOpen={setOpen} info={info} setInfo={setInfo} />
       {firms?.length > 0 && (
         <Grid container sx={flexCenter} mt={4}>

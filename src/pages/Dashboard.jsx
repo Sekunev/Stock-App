@@ -11,12 +11,11 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { logoutSuccess } from "../features/authSlice";
 import { useSelector } from "react-redux";
 import { Avatar, Button, Container } from "@mui/material";
 import MenuListItems from "../components/MenuListItems";
 import { amber } from "@mui/material/colors";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import useAuthCalls from "../hooks/useAuthCalls";
 
 const drawerWidth = 200;
@@ -92,6 +91,8 @@ export default function Dashboard() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const navigate = useNavigate();
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -117,7 +118,13 @@ export default function Dashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            onClick={() => navigate("/stock")}
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, cursor: "pointer" }}
+          >
             Stock App
           </Typography>
           {currentUser && (
@@ -128,7 +135,7 @@ export default function Dashboard() {
               <Avatar
                 alt={currentUser.toUpperCase()}
                 src="/static/images/avatar/1.jpg"
-                sx={{ bgcolor: "black", ml: 2, width: 46, height: 46 }}
+                sx={{ bgcolor: "orange", ml: 2, width: 46, height: 46 }}
               />
             </>
           )}
