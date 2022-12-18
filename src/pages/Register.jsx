@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from "formik";
-import image from "../assets/result.svg";
+import image from "../assets/resultb.svg";
 import Grid from "@mui/material/Grid";
 import RegisterForm, { registerSchema } from "../components/RegisterForm";
 import { Link } from "react-router-dom";

@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Formik } from "formik";
 import LockIcon from "@mui/icons-material/Lock";
-import image from "../assets/result.svg";
+import image from "../assets/resultb.svg";
 
 import { Link } from "react-router-dom";
 import LoginForm, { loginSchema } from "../components/LoginForm";
