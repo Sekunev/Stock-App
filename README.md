@@ -8,7 +8,7 @@ Project aims to create a Stock App.
 
 ### Visualization of the Website
 
-![image](https://github.com/Sekunev/FireBlog-App/blob/main/Animation.gif)
+![image](https://github.com/Sekunev/Stock-App/blob/main/src/assets/AnimationProject.gif)
 
 ## Project Skeleton
 
