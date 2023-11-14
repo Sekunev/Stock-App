@@ -49,7 +49,8 @@ const icons = [
   {
     title: "Admin Panel",
     icon: <SupervisorAccountIcon />,
-    url: "https://13785.fullstack.clarusway.com/admin",
+    // url: "https://13785.fullstack.clarusway.com/admin",
+    url: "https://stockapp-api-s0dp.onrender.com/admin",
   },
 ];
 
